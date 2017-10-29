@@ -2,6 +2,8 @@ import XCTest
 import Testing
 import HTTP
 import Sockets
+import Quick
+
 @testable import Vapor
 @testable import App
 
