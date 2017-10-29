@@ -28,48 +28,6 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "Nimble::Nimble"
-               BuildableName = "Nimble.framework"
-               BlueprintName = "Nimble"
-               ReferencedContainer = "container:ArcyDo.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "Quick::Quick"
-               BuildableName = "Quick.framework"
-               BlueprintName = "Quick"
-               ReferencedContainer = "container:ArcyDo.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "Quick::QuickSpecBase"
-               BuildableName = "QuickSpecBase.framework"
-               BlueprintName = "QuickSpecBase"
-               ReferencedContainer = "container:ArcyDo.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "Vapor::Testing"
                BuildableName = "Testing.framework"
                BlueprintName = "Testing"
@@ -87,6 +45,20 @@
                BlueprintIdentifier = "ArcyDo::App"
                BuildableName = "App.framework"
                BlueprintName = "App"
+               ReferencedContainer = "container:ArcyDo.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "RxSwift::RxSwift"
+               BuildableName = "RxSwift.framework"
+               BlueprintName = "RxSwift"
                ReferencedContainer = "container:ArcyDo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
