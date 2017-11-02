@@ -87,7 +87,7 @@ name | string | no | Updated name
 ## Delete
 ##### Request
 ```
-PUT ./api/lists/:LIST_IDENTIFIER
+DELETE ./api/lists/:LIST_IDENTIFIER
 ```
 
 ##### Payload
