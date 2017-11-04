@@ -7,7 +7,7 @@ extension Droplet {
             try json.set("hello", "world")
             return json
         }
-
+        get("description") { req in return req.description }
         get("plaintext") { req in
             return "Hello, world!"
         }
@@ -17,11 +17,9 @@ extension Droplet {
         get("info") { req in
             return req.description
         }
-
-        get("description") { req in return req.description }
         
-        try resource("posts", PostController.self)
-        
-        try resource("lists", ListController.self)
+        let api = grouped("api")
+        try api.resource("posts", PostController.self)
+        try api.resource("lists", ListController.self)
     }
 }
