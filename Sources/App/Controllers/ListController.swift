@@ -1,12 +1,21 @@
-//
-//  ListController.swift
-//  ArcyDoPackageDescription
-//
-//  Created by Michal Miedlarz on 04.11.2017.
-//
+import Vapor
+import HTTP
 
-import UIKit
-
-class ListController: NSObject {
-
+final class ListController: ResourceRepresentable {
+    var lists = ["foo", "bar"]
+    
+    // 'GET ./lists'
+    func index(_ req: Request) throws -> ResponseRepresentable {
+        print("\(req)")
+        return lists.joined()
+    }
+    
+    func makeResource() -> Resource<List> {
+        
+        return Resource(
+            index: index
+        )
+    }
 }
+
+extension ListController: EmptyInitializable { }
