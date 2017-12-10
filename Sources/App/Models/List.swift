@@ -60,3 +60,5 @@ extension List: Preparation {
     }
 }
 
+extension List: ResponseRepresentable { }
+

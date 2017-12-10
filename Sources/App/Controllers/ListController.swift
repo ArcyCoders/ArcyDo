@@ -2,20 +2,28 @@ import Vapor
 import HTTP
 
 final class ListController: ResourceRepresentable {
-    var counter = 0
     
-    // 'GET ./lists'
+    /// When users call 'GET' on '/lists'
+    /// it should return an index of all available lists
     func index(_ req: Request) throws -> ResponseRepresentable {
-        let list = List(name: "List_\(counter)")
-        counter+=1
-        
-        try list.save()
         return try List.all().makeJSON()
     }
     
+    
+    /// When consumers call 'POST' on '/lists' with valid JSON
+    /// construct and save the list
+    func store(_ req: Request) throws -> ResponseRepresentable {
+        guard let json = req.json else { throw Abort.badRequest }
+        let list = try List(json: json)
+        try list.save()
+        return list
+    }
+
+    /// WTF is below?!
     func makeResource() -> Resource<List> {
         return Resource(
-            index: index
+            index: index,
+            store: store
         )
     }
 }
