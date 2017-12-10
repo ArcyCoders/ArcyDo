@@ -2,7 +2,6 @@ import Vapor
 import HTTP
 
 final class ListController: ResourceRepresentable {
-    var lists = ["foo", "bar"]
     var counter = 0
     
     // 'GET ./lists'
