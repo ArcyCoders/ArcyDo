@@ -62,3 +62,21 @@ extension List: Preparation {
 
 extension List: ResponseRepresentable { }
 
+// MARK: Update
+
+// This allows the List model to be updated
+// dynamically by the request.
+extension List: Updateable {
+    // Updateable keys are called when `list.update(for: req)` is called.
+    // Add as many updateable keys as you like here.
+    public static var updateableKeys: [UpdateableKey<List>] {
+        return [
+            // If the request contains a String at key "name"
+            // the setter callback will be called.
+            UpdateableKey(List.Keys.name, String.self) { list, name in
+                list.name = name
+            }
+        ]
+    }
+}
+
