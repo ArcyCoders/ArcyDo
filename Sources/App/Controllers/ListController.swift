@@ -40,13 +40,27 @@ final class ListController: ResourceRepresentable {
         return list
     }
     
-    /// WTF is below?!
+    /// When a user calls 'PUT' on a specific resource, we should replace any
+    /// values that do not exist in the request with null.
+    /// This is equivalent to creating a new List with the same ID.
+    func replace(_ req: Request, list: List) throws -> ResponseRepresentable {
+        guard let json = req.json else { throw Abort.badRequest }
+        let newList = try List(json: json)
+        
+        list.name = newList.name
+        try list.save()
+        
+        return list
+    }
+    
+    /// Setting available methods in controller
     func makeResource() -> Resource<List> {
         return Resource(
             index: index,
             store: store,
             show: show,
             update: update,
+            replace: replace,
             destroy: delete
         )
     }
